@@ -3,118 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurante Los Pollos Hermanos 🍽️</title>
+    <title>Restaurante Los Pollos Hermanos</title>
     <style>
-        /* Reset básico para remover estilos padrão do navegador */
-        * {
+        body {
+            background-color: #fff3e0;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f4f4f4;
-        }
-
-        /* Cabeçalho */
         header {
-            background: #333;
-            color: #fff;
-            padding: 1rem 0;
+            background-color: #ffa726;
+            color: white;
             text-align: center;
+            padding: 10px 0;
         }
-
-        /* Navegação */
-        nav ul {
-            list-style: none;
-            background: #555;
-            text-align: center;
-            padding: 0.5rem 0;
+        #menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
         }
-
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
+        .menu-item {
+            border: 1px solid #ffa726;
+            margin: 10px;
+            padding: 10px;
+            width: 30%;
         }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #fff;
-            font-weight: bold;
-        }
-
-        /* Seção principal */
-        main {
-            padding: 1rem;
-        }
-
-        /* Rodapé */
         footer {
-            background: #333;
-            color: #fff;
+            background-color: #ffa726;
+            color: white;
             text-align: center;
-            padding: 1rem 0;
-            position: absolute;
+            position: fixed;
             bottom: 0;
             width: 100%;
+            padding: 10px 0;
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1>Restaurante Los Pollos Hermanos</h1>
+    </header>
 
-<header>
-    <h1>Restaurante Los Pollos Hermanos</h1>
-</header>
-
-<nav>
-    <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#news">Notícias</a></li>
-        <li><a href="#contact">Contato</a></li>
-        <li><a href="#about">Sobre</a></li>
-    </ul>
-</nav>
-
-<main>
-    <section id="home">
-        <h2>Bem-vindo ao Restaurante Los Pollos Hermanos 🍽️</h2>
-        <p>Bem-vindos ao nosso restaurante! Temos o prazer de apresentar a vocês hoje as nossas deliciosas e suculentas comidas baseadas apenas no frango. Cada comida que temos no nosso cardápio é feita de frango ou de partes de um frango, único restaurante do Brasil com esta interessante temática. Espero que adorem as nossas comidas! Bom apetite.</p>
+    <section id="menu">
+        <div class="menu-item">
+            <h2>Frango Grelhado</h2>
+            <p>Delicioso frango grelhado com tempero especial.</p>
+        </div>
+        <div class="menu-item">
+            <h2>Frango Frito</h2>
+            <p>Crocante por fora, suculento por dentro.</p>
+        </div>
+        <!-- Adicione mais itens aqui -->
     </section>
 
-    <section id="news">
-        <h2>Notícias Recentes</h2>
-        <p>Avaliado com 5 estrelas pelo crítico Gusteo Frederic De Lavier há 3 meses atrás.</p>
-    </section>
+    <!-- Adicione mais seções conforme necessário -->
 
-    <section id="contact">
+    <footer>
+        <p>© 2024 Restaurante Los Pollos Hermanos</p>
+    </footer>
+
+    <script>
+        // Função para exibir uma mensagem de boas-vindas quando o site é carregado
+window.onload = function() {
+    alert('Bem-vindo ao Restaurante Los Pollos Hermanos!');
+};
+
+// Função para validar um formulário de contato
+function validarFormulario() {
+    var nome = document.getElementById('nome').value;
+    var email = document.getElementById('email').value;
+    if(nome == "" || email == "") {
+        alert('Por favor, preencha todos os campos.');
+        return false;
+    }
+    alert('Formulário enviado com sucesso!');
+    return true;
+}
+
+// Função para alternar a visibilidade de uma seção do menu
+function toggleMenuSection(sectionId) {
+    var section = document.getElementById(sectionId);
+    if(section.style.display === 'none') {
+        section.style.display = 'block';
+    } else {
+        section.style.display = 'none';
+    }
+}
+        <body>
+    <!-- Restante do código HTML -->
+
+    <!-- Seção de contato com formulário -->
+    <section id="contato">
         <h2>Contato</h2>
-        <p>Número de telefone: 41 984661-1104.<br>
-        Avenida João Barbosa 1139.<br>
-        Instagram: @restaurant_los_pollos_hermanos</p>
+        <form onsubmit="return validarFormulario()">
+            <input type="text" id="nome" placeholder="Seu nome">
+            <input type="email" id="email" placeholder="Seu email">
+            <input type="submit" value="Enviar">
+        </form>
     </section>
 
-    <section id="about">
-        <h2>Sobre</h2>
-        <p>Era uma vez, em uma pequena cidade esquecida pelo tempo, uma família que vivia com muito pouco. O patriarca, José, e sua esposa, Maria, lutavam diariamente para alimentar seus três filhos. A vida era dura, mas a família era unida e cheia de amor.
+    <!-- Botão para alternar a seção do menu -->
+    <button onclick="toggleMenuSection('menu')">Mostrar/Ocultar Menu</button>
 
-José tinha um talento especial para cozinhar, e seu prato de assinatura era o frango. Ele preparava o frango de maneiras que encantavam todos que o provavam. Maria, com sua habilidade em negócios, teve uma ideia: por que não transformar a paixão de José em uma fonte de renda?
-
-Com poucos recursos, mas muita determinação, a família transformou o pequeno quintal de sua casa em um restaurante rústico. Eles chamaram de "Restaurante Los Pollos Hermanos". O menu era simples, mas cada prato era feito com o coração. O frango vinha em todas as formas: assado, frito, ensopado, e até em versões vegetarianas feitas de soja para aqueles que não comiam carne.
-
-A notícia do sabor incomparável do frango de José se espalhou como fogo. Logo, pessoas de cidades vizinhas começaram a visitar o restaurante. Com o tempo, "Los Pollos Hermanos" se tornou um ponto de encontro para famílias, amigos e até turistas.
-
-Anos se passaram, e o pequeno restaurante de quintal se transformou em uma cadeia de sucesso. A família, que antes mal conseguia sobreviver, agora prosperava. Mas mesmo com o sucesso, eles nunca esqueceram suas raízes. O restaurante continuou a ser um lugar onde todos eram tratados como família, e cada prato de frango era uma celebração da vida e do amor que os uniu.
-
-E assim, "Los Pollos Hermanos" se tornou mais do que um restaurante; tornou-se uma lenda, um símbolo de esperança e perseverança, mostrando que, com amor e dedicação, é possível transformar sonhos em realidade. 🍗❤️</p>
-    </section>
-</main>
-
-<footer>
-    <p>© 2024 Restaurante Los Pollos Hermanos</p>
-</footer>
-
+    <!-- Inclusão do script JavaScript -->
+    <script src="script.js"></script>
+</body>
+    
+    </script>
 </body>
 </html>
